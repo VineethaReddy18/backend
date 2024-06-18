@@ -37,6 +37,16 @@ const productsSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  prevStation: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
+  productHistory: {
+    type: Array,
+    required: false,
+    default: [],
+  },
 });
 
 const product = mongoose.model("product", productsSchema);
