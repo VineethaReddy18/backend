@@ -49,6 +49,13 @@ const productsSchema = mongoose.Schema({
   },
 });
 
+const pdfSchema = mongoose.Schema({
+  filename: String,
+  contentType: String,
+  data: Buffer,
+});
+
+const PDF = mongoose.model("PDF", pdfSchema);
 const product = mongoose.model("product", productsSchema);
 
-module.exports = { product };
+module.exports = { product, PDF };
